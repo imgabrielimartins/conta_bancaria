@@ -47,7 +47,7 @@ constructor(numero: number, agencia: number, tipo: number, titular: string, sald
     }
 
     public get saldo(){
-        return this.saldo;
+        return this._saldo;
     }
 
     public set saldo(saldo: number){
