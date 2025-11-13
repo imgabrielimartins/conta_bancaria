@@ -91,4 +91,42 @@ export class ContaController implements ContaRepository {
             console.log(colors.fg.red, "\nA conta numero: " + numero + " não foi encontrada!", colors.reset)
     }
     
+    public sacar1(numero: number, valor: number): void{
+        let conta = this.buscarNoArray(numero);
+
+        if (conta != null){
+
+            if(conta.sacar(valor) == true){
+                console.log(colors.fg.green, "\nO saque na Conta numero: " + numero +
+            " foi efetuado com sucesso!", colors.reset);
+                }else 
+                    console.log(colors.fg.red, "\nA conta numero: " + numero +
+                        " não foi encontrada!", colors.reset);
+        }
+    }
+    public depositar1(numero: number, valor: number): void{
+            let conta = this.buscarNoArray(numero);
+
+            if(conta != null){
+                conta.depositar(valor);
+                console.log(colors.fg.green, "\nO deposito na conta numero: " + numero +
+                    " foi efetuado com sucesso!", colors.reset);
+            }else
+                console.log(colors.fg.red, "\nA conta numero: " + numero +
+                " não foi encontrada!", colors.reset);
+             }
+
+    
+        public transferir1(numeroOrigem: number, numeroDestino: number, valor: number): void{
+            let contaOrigem = this.buscarNoArray(numeroOrigem);
+            let contaDestino = this.buscarNoArray(numeroDestino);
+
+            if (contaOrigem != null && contaDestino != null){
+                if(contaOrigem.sacar(valor) == true){
+                    contaDestino.depositar(valor);
+                    console.log(colors.fg.green, "\nA transferencia da conta numero: " + numeroOrigem +" para a conta numero: " + numeroDestino + " foi efetuada com sucesso!", colors.reset);
+                }
+            }else
+                console.log(colors.fg.red, "\nA conta numero: " + numeroOrigem + " e/ou a conta numero: "+ numeroDestino + "não foram encontradas!", colors.reset);  
+        }
 }
