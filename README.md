@@ -59,4 +59,4 @@ src/
 Gabrieli Martins
 Estudante de Análise e Desenvolvimento de Sistemas 💻
 
-LinkedIn:[Se conecte comigo!](https://linkedin.com/in/gabrielimartinsdev)
+LinkedIn: [Se conecte comigo!](https://linkedin.com/in/gabrielimartinsdev)
